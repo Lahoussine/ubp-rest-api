@@ -28,6 +28,8 @@ public class RandomDoublesController {
     }
 
     // ici j'ai mis le handling d'une exception generique sur un endpoint on retourne par défaut BAD REQUEST + message exception
+    // Il est plus propre de le mettre dans une classe dédiée comme RestResponseEntityExceptionHandler mais je ne sais pas pourquoi elle semble ne pas etre prise en compte lorsque l'erreur arrive
+    // Pour l'exercice je l'ai mis dans le controller meme si ce n'est pas ce que j'aurais fait dans une situation réelle
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleNoSuchElementFoundException(
             Exception exception
